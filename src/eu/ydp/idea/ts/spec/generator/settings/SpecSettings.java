@@ -17,6 +17,26 @@ public class SpecSettings implements Configurable {
 
     public static String SPEC_TEMPLATE_KEY = "eu.ydp.idea.ts.spec.generator.settings.spec.template";
 
+    public static String TEMPLATE = "import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';\n" +
+            "\n" +
+            "describe('$ClassName$', () => {\n" +
+            "  let $ObjName$:$ClassName$;\n" +
+            "\n" +
+            "  beforeEach(() => {\n" +
+            "    $ObjName$ = new $ClassName$();\n" +
+            "  });\n" +
+            "\n" +
+            "  describe('', () => {\n" +
+            "    it('', () => {\n" +
+            "      // given\n" +
+            "\n" +
+            "      // when\n" +
+            "\n" +
+            "      // then\n" +
+            "    });\n" +
+            "  });\n" +
+            "});\n";
+
     @Nullable
     private SpecSettingsForm settingsForm = null;
     private PropertiesComponent properties = null;
@@ -24,14 +44,14 @@ public class SpecSettings implements Configurable {
     public SpecSettings(@NotNull Project project) {
         properties = PropertiesComponent.getInstance(project);
         if (!properties.isValueSet(SPEC_TEMPLATE_KEY)) {
-           properties.setValue(SPEC_TEMPLATE_KEY, SpecGenerator.TEMPLATE);
+           properties.setValue(SPEC_TEMPLATE_KEY, TEMPLATE);
         }
     }
 
     @Nls
     @Override
     public String getDisplayName() {
-        return "TypeScript Spec Generator";
+        return "TypeScript Test File Generator";
     }
 
     @Nullable

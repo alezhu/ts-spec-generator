@@ -49,8 +49,8 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="tsGenerateSpec" class="eu.ydp.idea.ts.spec.generator.actions.GenerateSpecAction" text="Generate or navigate to spec file"
-            description="Generates spec file for ts class">
+    <action id="tsGenerateSpec" class="eu.ydp.idea.ts.spec.generator.actions.GenerateSpecAction" text="Create TypeScript test file"
+            description="Creates test file for TypeScript">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
   </actions>

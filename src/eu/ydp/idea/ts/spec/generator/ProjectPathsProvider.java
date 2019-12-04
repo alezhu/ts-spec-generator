@@ -4,7 +4,7 @@ import com.intellij.openapi.project.Project;
 
 public class ProjectPathsProvider {
     private String SOURCE_PATH = "src/";
-    private String SPEC_PATH = "test/spec/";
+    private String SPEC_PATH = "src/";
 
     private Project project;
 
